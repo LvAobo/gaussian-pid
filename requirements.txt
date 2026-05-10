@@ -1,0 +1,24 @@
+# Python dependencies for "Closed-Form Gaussian Estimators for
+# Multivariate Information Decomposition" (ITW 2026 short paper).
+#
+# Pinned versions reflect the environment under which the paper figures
+# were produced. The two upper bounds below are necessary because the
+# `dit` library (used only for the I_ccs baseline in Experiment 2) is
+# incompatible with newer numpy / scipy releases:
+#   - numpy >= 2.0 removed `np.alltrue`, which `dit` 1.5 still calls
+#   - scipy >= 1.15 enforces 1-D `x0` in scipy.optimize.minimize, which
+#     `dit.algorithms.optimization` does not honour. `experiment2_run.py`
+#     monkey-patches this at runtime, but staying on scipy < 1.15 keeps
+#     the patch surface small.
+
+numpy<2
+scipy<1.15
+pandas
+matplotlib
+
+# Discrete PID baseline (Iccs measure of Ince 2017, used only in
+# Experiment 2). `lattices` and `PLTable` are runtime dependencies of
+# `dit` 1.5 not auto-pulled by the wheel.
+dit
+lattices
+PLTable
