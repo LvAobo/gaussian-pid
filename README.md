@@ -1,10 +1,10 @@
 # Closed-Form Gaussian Estimators for Multi-Source Partial Information Decomposition
 
-Anonymous code release accompanying the submission to the **2026 IEEE
+Code release accompanying the submission to the **2026 IEEE
 Information Theory Workshop**:
 
 > *Closed-Form Gaussian Estimators for Multi-Source Partial Information
-> Decomposition* (under review).
+> Decomposition*.
 
 This repository contains the reference NumPy implementation of every
 closed-form estimator introduced in the paper, the discrete plug-in
@@ -13,7 +13,7 @@ produce Figures&nbsp;1–3.
 
 A single `pip install` and one `python3` command per figure are enough
 to reproduce the entire experimental section bit-for-bit; all random
-seeds are fixed (`seed = 20260503`).
+seeds are fixed, i.e., `seed = 20260503` or `seed = 20260510`(ITW 2026 ddl).
 
 ---
 
