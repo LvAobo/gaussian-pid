@@ -40,9 +40,7 @@ Estimators compared
 -------------------
 A. Ours (closed-form, this paper).
    PID atoms via the conditional-copy decomposition of
-   `gaussian_pid.gaussian_two_source_pid`. For jointly Gaussian
-   2-source systems the population values coincide numerically with
-   the BROJA decomposition of Bertschinger et al. (2014).
+   `gaussian_pid.gaussian_two_source_pid`.
 
 B. Barrett MMI [Barrett, 2015]:
        Red_MMI = min(I(S_1; T), I(S_2; T))
@@ -301,7 +299,7 @@ class Estimator:
 
 ESTIMATORS: List[Estimator] = [
     Estimator(key="ours",
-              label=r"Ours / BROJA",
+              label=r"Ours",
               fn=estimator_ours),
     Estimator(key="mmi",
               label=r"Barrett MMI",
@@ -481,7 +479,7 @@ def _fmt_cell(mean: float, std: float, pop: float, decimals: int = 2,
 # atoms within one configuration. Looked up by the FROZENSET of
 # estimator `key` strings present in the group.
 _GROUP_LABEL: Dict[frozenset, str] = {
-    frozenset({"ours"}):                       r"Ours / BROJA",
+    frozenset({"ours"}):                       r"Ours",
     frozenset({"mmi"}):                        r"Barrett MMI",
     frozenset({"delta_pid"}):                  r"Venkatesh--Schamberg $\delta$-PID",
     frozenset({"g_pid"}):                      r"Venkatesh $\widetilde G$-PID",
@@ -558,13 +556,12 @@ def save_latex_table(summary: List[Dict], path: str) -> None:
                  r"configurations. Cells show plug-in mean~$\pm$~standard "
                  r"deviation over $50$ trials at $M = 1000$ samples; "
                  r"analytical population values are in parentheses. "
-                 r"\emph{Ours / BROJA}: our population values numerically "
-                 r"coincide with the BROJA decomposition across all five "
-                 r"configurations to the displayed precision. "
+                 r"\emph{Ours} is the closed-form conditional-copy "
+                 r"decomposition of this paper. "
                  r"MMI~\cite{barrett2015exploration}, "
                  r"$\delta$-PID~\cite{venkatesh2022partial} and "
                  r"$\widetilde G$-PID~\cite{venkatesh2023gaussian}, "
-                 r"computed via the authors' \texttt{gpid} package, also "
+                 r"computed via the authors' \texttt{gpid} package, "
                  r"coincide numerically and are collapsed into a single "
                  r"row whenever they do.}")
     lines.append(r"  \label{tab:n2_comparison}")
