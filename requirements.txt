@@ -22,3 +22,10 @@ matplotlib
 dit
 lattices
 PLTable
+
+# Gaussian PID baselines for Experiment 5 (two-source comparison):
+# Barrett MMI / Venkatesh-Schamberg delta-PID / Venkatesh tilde G-PID.
+# Installs as the `gpid` package and pulls in CVXPY for the
+# deficiency-based optimisation.
+gpid @ git+https://github.com/praveenv253/gpid@main
+cvxpy
