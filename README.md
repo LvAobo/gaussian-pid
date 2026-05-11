@@ -13,7 +13,7 @@ the figures and tables of Section 5 and the arXiv appendices.
 
 A single `pip install -r requirements.txt` and one `python3` command
 per script reproduces the entire experimental section bit-for-bit; all
-random seeds are fixed (`seed = 20260503`).
+random seeds are fixed, i.e., `seed = 20260503` or `seed = 20260503` (ITW 2026 ddl).
 
 ---
 
